@@ -438,7 +438,9 @@ class Analyzer(override val catalogManager: CatalogManager) extends RuleExecutor
     Batch("HandleSpecialCommand", Once,
       HandleSpecialCommand),
     Batch("Remove watermark for batch query", Once,
-      EliminateEventTimeWatermark)
+      EliminateEventTimeWatermark),
+    Batch("Insert Loops", Once,
+      InsertLoops)
   )
 
   /**
